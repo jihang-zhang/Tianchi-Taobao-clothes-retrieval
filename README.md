@@ -59,18 +59,20 @@
 ```
 
 ## 3、代码运行
-```
  · 下载在ImageNet-1k预训练的[VoVNetV2-99](https://dl.dropbox.com/s/1mlv31coewx8trd/vovnet99_ese_detectron2.pth)模型权重
+ 
  · 将vovnet99_ese_detectron2.pth放置到 ./bbox_sub/pretrained 文件夹下
+ 
  · 先build并提交bbox_sub，再build并提交metric_sub
-   · 由于比赛提供的训练环境没有网络连接，所以无法直接下载EfficientNet-Noisy-Student的预训练权重。请在构建模型后手动导入预训练权重，保存为
+ 
+ · 由于比赛提供的训练环境没有网络连接，所以无法直接下载EfficientNet-Noisy-Student的预训练权重。请在构建模型后手动导入预训练权重，保存为
+   
      ./metric_sub/pretrained/effnet-b5-imagenet-pretrained.pt
      ./metric_sub/pretrained/effnet-b6-imagenet-pretrained.pt
      ./metric_sub/pretrained/effnet-b7-imagenet-pretrained.pt
+     
  · 代码为清理过后的代码，与实际训练和推理过程有所差别，因此运行时间可能会超过5天的时间限制
-```
+
 
 ## 4、环境
-```
- · 参考两个Dockerfile。主要区别为bbox_sub内用的PyTorch 1.4，而metric_sub中用的为PyTorch 1.6 (nightly)
-```
+参考两个Dockerfile。主要区别为bbox_sub内用的PyTorch 1.4，而metric_sub中用的为PyTorch 1.6 (nightly)
