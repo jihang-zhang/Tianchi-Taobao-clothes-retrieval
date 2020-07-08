@@ -1,5 +1,6 @@
+# 天池淘宝直播商品识别大赛 复赛第7名方案
 
-# 1、模型思路
+## 1、模型思路
 ```
  · 先检测再根据检测框进行图像检索
  · 目标检测模型 (Detectron2)： 以VoVNet-v2-99-FPN为骨干网络的Faster-RCNN。输入数据为train part 1-5
@@ -33,7 +34,7 @@
     · 以上后处理及推理过程的细节请参考./metric_sub/src_infer/run.py
 ```
 
-# 2、路径信息
+## 2、路径信息
 ```
 .
 ├── bbox_sub                                 # 目标检测模型
@@ -57,7 +58,7 @@
 └── readme.txt
 ```
 
-# 3、代码运行
+## 3、代码运行
 ```
  · 下载在ImageNet-1k预训练的[VoVNetV2-99](https://dl.dropbox.com/s/1mlv31coewx8trd/vovnet99_ese_detectron2.pth)模型权重
  · 将vovnet99_ese_detectron2.pth放置到 ./bbox_sub/pretrained 文件夹下
@@ -65,7 +66,7 @@
  · 代码为清理过后的代码，与实际训练和推理过程有所差别，因此运行时间可能会超过5天的时间限制
 ```
 
-# 4、环境
+## 4、环境
 ```
  · 参考两个Dockerfile。主要区别为bbox_sub内用的PyTorch 1.4，而metric_sub中用的为PyTorch 1.6 (nightly)
 ```
