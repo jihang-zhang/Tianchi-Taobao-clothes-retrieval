@@ -1,0 +1,20 @@
+OUTPUT_DIR: '/myspace/one_cls_faster_rcnn_V_99_FPN'
+MODEL:
+  WEIGHTS: "/myspace/one_cls_faster_rcnn_V_99_FPN/model_final_weights.pth"
+  ROI_HEADS:
+    NUM_CLASSES: 1
+SOLVER:
+  LR_SCHEDULER_NAME: "WarmupCosineLR"
+  BASE_LR: 0.003
+  IMS_PER_BATCH: 2
+  MAX_ITER: 60000
+  WARMUP_ITERS: 0
+  CHECKPOINT_PERIOD: 5000
+INPUT:
+  MAX_SIZE_TRAIN: 1100
+  MIN_SIZE_TRAIN: (540, 576, 608, 640, 672, 704, 736, 768, 800)
+DATASETS:
+  TRAIN: ("taobao_train_all", )
+  TEST: ("taobao_val_mini_img", "taobao_val_mini_vid", )
+TEST:
+  EVAL_PERIOD: 5000

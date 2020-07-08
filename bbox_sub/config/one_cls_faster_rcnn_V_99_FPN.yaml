@@ -1,0 +1,20 @@
+OUTPUT_DIR: '/myspace/one_cls_faster_rcnn_V_99_FPN'
+MODEL:
+  WEIGHTS: "../pretrained/vovnet99_ese_detectron2.pth"
+  ROI_HEADS:
+    NUM_CLASSES: 1
+SOLVER:
+  BASE_LR: 0.003
+  GAMMA: 0.4
+  IMS_PER_BATCH: 4
+  MAX_ITER: 60000
+  STEPS: (60000, )
+  CHECKPOINT_PERIOD: 5000
+INPUT:
+  MAX_SIZE_TRAIN: 800
+  MIN_SIZE_TRAIN: (414, 438, 460, 484, 506, 530, 552, 576)
+DATASETS:
+  TRAIN: ("taobao_train_all", )
+  TEST: ("taobao_val_mini_img", "taobao_val_mini_vid", )
+TEST:
+  EVAL_PERIOD: 5000
